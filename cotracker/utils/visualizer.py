@@ -14,6 +14,12 @@ import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 from PIL import Image, ImageDraw
 
+def read_img(img_paths_list: str):
+    frames = []
+    for img_path in img_paths_list:
+        img = imageio.imread(img_path)
+        frames.append(img)
+    return np.stack(frames)
 
 def read_video_from_path(path):
     try:
